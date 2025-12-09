@@ -24,7 +24,7 @@ dotenv.config();
 
 export default {
   production: {
-    url: `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}/${process.env.PGDATABASE}?sslmode=require&channel_binding=require`,
+    url: process.env.DB_URL,
     dialect: "postgres",
     dialectOptions: {
       ssl: { require: true, rejectUnauthorized: false },

@@ -46,29 +46,30 @@ import SessionModel from "./Session.js";
 
 // ------------------ Setup Sequelize ------------------ //
 import dbConfigRaw from "../config/config.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const env = process.env.NODE_ENV || "development";
 
 let sequelize;
 
 if (env === "production") {
+  console.log("Connecting to Neon DB:", process.env.DB_URL); // debug
   sequelize = new Sequelize(process.env.DB_URL, {
     dialect: "postgres",
-    dialectOptions: {
-      ssl: { require: true, rejectUnauthorized: false },
-    },
+    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
     logging: false,
     timezone: "+03:00",
     define: { timestamps: true, underscored: false },
   });
 } else {
-  // Local development
+  // Local development only
   sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+    process.env.DB_NAME || "webdb",
+    process.env.DB_USER || "postgres",
+    process.env.DB_PASSWORD || "Ibrar1997",
     {
-      host: process.env.DB_HOST,
+      host: process.env.DB_HOST || "localhost",
       dialect: "postgres",
       logging: false,
       timezone: "+03:00",
@@ -76,8 +77,6 @@ if (env === "production") {
     }
   );
 }
-
-
 
 
 
@@ -293,14 +292,12 @@ User.hasMany(CartItem, { foreignKey: "user_id", as: "cartItems" });
 
 
 // ------------------ Connect Function ------------------ //
-const connectDB = async () => {
+ const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log("PostgreSQL connected successfully!");
-    await sequelize.sync({ alter: false }); // Don't drop tables
-    console.log("✅ All tables synchronized successfully");
-  } catch (error) {
-    console.error("Unable to connect to DB:", error);
+    console.log("✅ Database connected!");
+  } catch (err) {
+    console.error("Unable to connect to DB:", err);
   }
 };
 
