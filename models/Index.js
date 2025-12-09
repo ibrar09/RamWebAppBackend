@@ -47,26 +47,35 @@ import SessionModel from "./Session.js";
 // ------------------ Setup Sequelize ------------------ //
 import dbConfigRaw from "../config/config.js";
 
-
 const env = process.env.NODE_ENV || "development";
-const dbConfig = dbConfigRaw[env];
 
-const sequelize = env === "production"
-  ? new Sequelize(dbConfig.url, {
+let sequelize;
+
+if (env === "production") {
+  sequelize = new Sequelize(process.env.DB_URL, {
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: { require: true, rejectUnauthorized: false },
+    },
+    logging: false,
+    timezone: "+03:00",
+    define: { timestamps: true, underscored: false },
+  });
+} else {
+  // Local development
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: process.env.DB_HOST,
       dialect: "postgres",
-      dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
       logging: false,
       timezone: "+03:00",
       define: { timestamps: true, underscored: false },
-    })
-  : new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
-      host: dbConfig.host,
-      dialect: dbConfig.dialect,
-      logging: false,
-      timezone: "+03:00",
-      dialectOptions: { useUTC: false, dateStrings: true, typeCast: true },
-      define: { timestamps: true, underscored: false },
-    });
+    }
+  );
+}
 
 
 
