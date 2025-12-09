@@ -1,5 +1,5 @@
 // services/categoryMenu.service.js
-import { Category, Product } from "../models/index.js";
+import { Category, Product } from "../models/Index.js";
 
 export const getCategoryMenuData = async () => {
   try {

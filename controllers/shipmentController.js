@@ -211,7 +211,7 @@
 // controllers/shipmentController.js
 import * as shipmentService from "../services/shipmentService.js";
 import * as aramexService from "../services/aramexService.js";
-import { UserAddress, Shipment, Order, User } from "../models/index.js";
+import { UserAddress, Shipment, Order, User } from "../models/Index.js";
 
 // ---------- Create shipment (auto Aramex) ----------
 export const createShipment = async (req, res) => {

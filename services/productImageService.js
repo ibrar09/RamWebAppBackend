@@ -1,4 +1,4 @@
-import { ProductImage } from "../models/index.js";
+import { ProductImage } from "../models/Index.js";
 
 export const createProductImage = async (data) => {
   return await ProductImage.create(data);

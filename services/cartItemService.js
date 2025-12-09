@@ -1,5 +1,5 @@
 // backend/services/cartService.js
-import { Product, ProductVariant, User, ProductImage, CartItem } from "../models/index.js";
+import { Product, ProductVariant, User, ProductImage, CartItem } from "../models/Index.js";
 
 // Add new item to cart
 export const addToCart = async (data) => {
@@ -8,7 +8,7 @@ export const addToCart = async (data) => {
 };
 
 // Get all cart items for a specific user
-import { Product, ProductVariant, User, ProductImage, CartItem } from "../models/index.js";
+import { Product, ProductVariant, User, ProductImage, CartItem } from "../models/Index.js";
 
 export const getCartByUser = async (user_id) => {
   return await CartItem.findAll({
@@ -16,7 +16,7 @@ export const getCartByUser = async (user_id) => {
     include: [
       {
         model: Product,
-        as: "product", // ✅ matches alias in index.js
+        as: "product", // ✅ matches alias in Index.js
         attributes: ["id", "name", "price"],
         include: [
           { model: ProductImage, as: "images", attributes: ["id", "url"] },

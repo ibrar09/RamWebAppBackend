@@ -1,4 +1,4 @@
-import { Shipment, Order } from "../models/index.js";
+import { Shipment, Order } from "../models/Index.js";
 
 export const createShipment = async (data) => {
   return await Shipment.create(data);

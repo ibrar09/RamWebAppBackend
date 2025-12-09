@@ -7,7 +7,7 @@ import {
 } from "../services/userAddressService.js";
 
 // controllers/userAddressController.js
-import { UserAddress, User ,Order } from "../models/index.js"; // make sure the path is correct
+import { UserAddress, User ,Order } from "../models/Index.js"; // make sure the path is correct
 
 
 // Create new address for logged-in user

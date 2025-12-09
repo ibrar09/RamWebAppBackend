@@ -1,5 +1,5 @@
 import fs from "fs";
-import * as db from "../models/index.js";
+import * as db from "../models/Index.js";
 
 const {
   Project,

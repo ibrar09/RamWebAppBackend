@@ -3,7 +3,7 @@ import puppeteer from "puppeteer";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { Order, User, OrderItem, Product } from "../models/index.js";
+import { Order, User, OrderItem, Product } from "../models/Index.js";
 
 // Fix for __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);

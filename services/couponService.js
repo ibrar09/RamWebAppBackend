@@ -1,5 +1,5 @@
 // services/couponService.js
-import  {Coupon}  from "../models/index.js";
+import  {Coupon}  from "../models/Index.js";
 
 export const createCoupon = async (data) => {
   return await Coupon.create(data);

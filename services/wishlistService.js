@@ -1,4 +1,4 @@
-import { Wishlist } from "../models/index.js";
+import { Wishlist } from "../models/Index.js";
 
 export const addToWishlist = async (data) => {
   return await Wishlist.create(data);

@@ -1,4 +1,4 @@
-import { Contact } from "../models/index.js";
+import { Contact } from "../models/Index.js";
 
 export const createContact = async (data) => {
   return await Contact.create(data);

@@ -1,5 +1,5 @@
 // services/orderItemService.js
-import { OrderItem } from "../models/index.js";
+import { OrderItem } from "../models/Index.js";
 
 /**
  * Create a new order item

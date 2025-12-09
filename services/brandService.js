@@ -1,4 +1,4 @@
-import { Brand } from "../models/index.js";
+import { Brand } from "../models/Index.js";
 
 export const createBrand = async (data) => {
   return await Brand.create(data);

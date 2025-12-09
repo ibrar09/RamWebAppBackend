@@ -1,4 +1,4 @@
-import { CartItem, Product, ProductVariant, User } from "../models/index.js";
+import { CartItem, Product, ProductVariant, User } from "../models/Index.js";
 
 // Add item to cart
 export const addToCart = async (req, res) => {

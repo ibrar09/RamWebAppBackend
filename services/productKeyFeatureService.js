@@ -1,4 +1,4 @@
-import { ProductKeyFeature } from "../models/index.js";
+import { ProductKeyFeature } from "../models/Index.js";
 
 export const createFeature = async (data) => await ProductKeyFeature.create(data);
 

@@ -1,4 +1,4 @@
-import { Product, Category, Brand, ProductDetail } from "../models/index.js";
+import { Product, Category, Brand, ProductDetail } from "../models/Index.js";
 import { Op, fn, col, where, literal } from "sequelize";
 
 /**

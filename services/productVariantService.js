@@ -1,4 +1,4 @@
-import { ProductVariant } from "../models/index.js";
+import { ProductVariant } from "../models/Index.js";
 
 export const createVariant = async (data) => await ProductVariant.create(data);
 

@@ -1,4 +1,4 @@
-import { Order, OrderItem, Product, ProductVariant, UserAddress, Payment, User } from "../models/index.js";
+import { Order, OrderItem, Product, ProductVariant, UserAddress, Payment, User } from "../models/Index.js";
 
 export const createOrder = async ({ user_id, address_id, products, payment_method, order_number }) => {
   if (!address_id) throw new Error("Address is required");

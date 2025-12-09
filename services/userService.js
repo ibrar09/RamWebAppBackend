@@ -1,4 +1,4 @@
-import { User ,UserAddress } from "../models/index.js";
+import { User ,UserAddress } from "../models/Index.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 

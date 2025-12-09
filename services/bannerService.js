@@ -1,4 +1,4 @@
-import { Banner } from "../models/index.js";
+import { Banner } from "../models/Index.js";
 
 export const getAllBanners = async () => {
   return await Banner.findAll({ order: [["priority", "DESC"], ["createdAt", "DESC"]] });

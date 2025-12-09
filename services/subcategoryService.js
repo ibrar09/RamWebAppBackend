@@ -1,5 +1,5 @@
 // services/subcategoryService.js
-import { Subcategory , Category} from "../models/index.js";
+import { Subcategory , Category} from "../models/Index.js";
 
 export const createSubcategory = async (data) => {
   return await Subcategory.create(data);

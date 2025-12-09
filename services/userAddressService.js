@@ -1,4 +1,4 @@
-import { UserAddress, User ,Order } from "../models/index.js";
+import { UserAddress, User ,Order } from "../models/Index.js";
 
 // Create a new address
 export const createAddressService = async (data, userId) => {

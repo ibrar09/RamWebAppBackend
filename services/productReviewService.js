@@ -1,5 +1,5 @@
 // ✅ services/productReviewService.js
-import { ProductReview, Order, OrderItem } from "../models/index.js";
+import { ProductReview, Order, OrderItem } from "../models/Index.js";
 
 /**
  * Create a new review

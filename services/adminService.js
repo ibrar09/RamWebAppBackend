@@ -1,4 +1,4 @@
-import { User, Product, Order } from "../models/index.js";
+import { User, Product, Order } from "../models/Index.js";
 
 export const getAllUsers = async () => {
   return await User.findAll({

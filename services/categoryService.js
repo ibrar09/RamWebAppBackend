@@ -1,4 +1,4 @@
-import { Category } from "../models/index.js";
+import { Category } from "../models/Index.js";
 import { Op } from "sequelize"; // ✅ import Sequelize operators
 
 export const createCategory = async (data) => {

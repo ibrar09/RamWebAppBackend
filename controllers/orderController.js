@@ -1,7 +1,7 @@
 // controllers/orderController.js
 import tapService from "../services/tapService.js";
 import { nanoid } from "nanoid";
-import { Order, UserAddress, OrderItem , Product , ProductVariant,User,Payment, Shipment, } from "../models/index.js";
+import { Order, UserAddress, OrderItem , Product , ProductVariant,User,Payment, Shipment, } from "../models/Index.js";
 
 /**
  * CREATE NEW ORDER

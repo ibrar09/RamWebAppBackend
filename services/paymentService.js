@@ -1,4 +1,4 @@
-import { Payment, Order, User ,OrderItem ,Product } from "../models/index.js";
+import { Payment, Order, User ,OrderItem ,Product } from "../models/Index.js";
 import axios from "axios";
 /**
  * Create a new payment

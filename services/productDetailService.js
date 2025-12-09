@@ -1,4 +1,4 @@
-import { ProductDetail, Product } from "../models/index.js";
+import { ProductDetail, Product } from "../models/Index.js";
 
 // Create Product Detail
 export const createProductDetail = async (data) => {

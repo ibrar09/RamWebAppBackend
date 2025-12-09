@@ -1,4 +1,4 @@
-import { SubcategoryItem, Subcategory } from "../models/index.js";
+import { SubcategoryItem, Subcategory } from "../models/Index.js";
 
 export const createSubcategoryItem = async (data) => {
   return await SubcategoryItem.create(data);

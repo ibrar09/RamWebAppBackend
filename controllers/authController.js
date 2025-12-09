@@ -2,7 +2,7 @@
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { User, Otp, Session } from "../models/index.js";
+import { User, Otp, Session } from "../models/Index.js";
 import { sendOtpEmail } from "../utils/email.js";
 import { generateAccessToken, generateRefreshToken } from "../utils/jwt.js";
 

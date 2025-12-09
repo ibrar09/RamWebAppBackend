@@ -1,5 +1,5 @@
 // backend/controllers/webhookController.js
-import { sequelize, Order, Payment, OrderItem, Product } from '../models/index.js';
+import { sequelize, Order, Payment, OrderItem, Product } from '../models/Index.js';
 import { mapTapStatusToApp } from "../utils/paymentStatus.js";
 
 /**

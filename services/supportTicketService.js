@@ -1,5 +1,5 @@
 // services/supportTicketService.js
-import { SupportTicket } from "../models/index.js";
+import { SupportTicket } from "../models/Index.js";
 
 export const createSupportTicket = async (data) => {
   return await SupportTicket.create(data);
