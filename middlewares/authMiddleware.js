@@ -1,6 +1,6 @@
 // backend/middlewares/authMiddleware.js
 import jwt from "jsonwebtoken";
-import { User, Session } from "../models/index.js";
+import { User, Session } from "../models/Index.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || "refreshsecret";
