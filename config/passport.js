@@ -1,7 +1,7 @@
 // backend/utils/googlePassport.js
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
-import { User } from "../models/index.js";
+import { User } from "../models/Index.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import crypto from "crypto"; // for generating random password

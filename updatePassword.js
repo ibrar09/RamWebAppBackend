@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { User } from "./models/index.js"; // adjust path if needed
+import { User } from "./models/Index.js"; // adjust path if needed
 import dotenv from "dotenv";
 
 dotenv.config(); // if you use environment variables for DB
