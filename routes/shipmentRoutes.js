@@ -9,7 +9,7 @@ import {
   trackShipment,
 } from "../controllers/shipmentController.js";
 
-import { Shipment, Order } from "../models/index.js";
+import { Shipment, Order } from "../models/Index.js";
 import { adminOnly, protect } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
