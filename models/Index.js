@@ -2,6 +2,7 @@
 import { Sequelize } from "sequelize";
 import config from "../config/config.js";
 
+
 // ------------------ Import Models ------------------ //
 import UserModel from "./User.js";
 import UserAddressModel from "./UserAddress.js";
@@ -44,31 +45,32 @@ import OtpModel from "./Otp.js";
 import SessionModel from "./Session.js";
 
 // ------------------ Setup Sequelize ------------------ //
+import dbConfigRaw from "../config/config.js";
+
+
 const env = process.env.NODE_ENV || "development";
-const dbConfig = config[env];
+const dbConfig = dbConfigRaw[env];
 
-if (!dbConfig) throw new Error(`No config found for environment: ${env}`);
+const sequelize = env === "production"
+  ? new Sequelize(dbConfig.url, {
+      dialect: "postgres",
+      dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+      logging: false,
+      timezone: "+03:00",
+      define: { timestamps: true, underscored: false },
+    })
+  : new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
+      host: dbConfig.host,
+      dialect: dbConfig.dialect,
+      logging: false,
+      timezone: "+03:00",
+      dialectOptions: { useUTC: false, dateStrings: true, typeCast: true },
+      define: { timestamps: true, underscored: false },
+    });
 
-const sequelize = new Sequelize(
-  dbConfig.database,
-  dbConfig.username,
-  dbConfig.password,
-  {
-    host: dbConfig.host,
-    dialect: dbConfig.dialect,
-    logging: false,
-    timezone: "+03:00",
-    dialectOptions: {
-      useUTC: false,
-      dateStrings: true,
-      typeCast: true,
-    },
-    define: {
-      timestamps: true,
-      underscored: false,
-    },
-  }
-);
+
+
+
 
 // ------------------ Initialize Models ------------------ //
 const User = UserModel(sequelize);
